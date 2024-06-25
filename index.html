@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이재명 대표님 후원</title>
+  <style>
+    body {
+      background-color: lightblue;
+      text-align: center;
+      padding: 50px;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      color: navy;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    .donate-button {
+      font-size: 20px;
+      padding: 10px 20px;
+      background-color: navy;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .donate-button:hover {
+      background-color: darkblue;
+    }
+  </style>
+</head>
+<body>
+  <h1>이재명 대표님을 후원해주세요!</h1>
+  <p>이재명 대표님은 여러분의 후원을 필요로 합니다.</p>
+
+  <!-- PayPal Donate Button -->
+  <div id="paypal-button-container-P-6JB8346671406225AMZ5P2AQ"></div>
+  <script src="https://www.paypal.com/sdk/js?client-id=AVWXXBJZghsQnnloUxSywEVYSw8uFuI93hBQR76YGsJbsN7kh9MMsU83VH6qtTMmhSIuGW3MI3urVBaa&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+  <script>
+    paypal.Buttons({
+        style: {
+            shape: 'rect',
+            color: 'gold',
+            layout: 'vertical',
+            label: 'subscribe'
+        },
+        createSubscription: function(data, actions) {
+          return actions.subscription.create({
+            /* Creates the subscription */
+            plan_id: 'P-6JB8346671406225AMZ5P2AQ'
+          });
+        },
+        onApprove: function(data, actions) {
+          alert(data.subscriptionID); // You can add optional success message for the subscriber here
+        }
+    }).render('#paypal-button-container-P-6JB8346671406225AMZ5P2AQ'); // Renders the PayPal button
+  </script>
+
+</body>
+</html>
