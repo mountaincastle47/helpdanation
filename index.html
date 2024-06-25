@@ -28,9 +28,14 @@
       border-radius: 5px;
       cursor: pointer;
       text-decoration: none;
+      display: inline-block; /* 버튼을 인라인 블록 요소로 설정 */
     }
     .donate-button:hover {
       background-color: darkblue;
+    }
+    .donate-info {
+      font-size: 16px;
+      margin-top: 10px; /* 텍스트와 버튼 사이의 간격 설정 */
     }
   </style>
 </head>
@@ -38,15 +43,18 @@
   <h1>이재명 대표님을 후원해주세요!</h1>
   <p>이재명 대표님은 여러분의 후원을 필요로 합니다.</p>
 
+  <!-- 후원 정보 -->
+  <div class="donate-info">한 달에 $1을 후원해주세요.</div>
+
   <!-- PayPal Donate Button -->
   <div id="paypal-button-container-P-6JB8346671406225AMZ5P2AQ"></div>
   <script src="https://www.paypal.com/sdk/js?client-id=AVWXXBJZghsQnnloUxSywEVYSw8uFuI93hBQR76YGsJbsN7kh9MMsU83VH6qtTMmhSIuGW3MI3urVBaa&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
   <script>
     paypal.Buttons({
         style: {
-            shape: 'rect',
+            layout: 'horizontal', // 수평으로 배치
             color: 'gold',
-            layout: 'vertical',
+            shape: 'rect',
             label: 'subscribe'
         },
         createSubscription: function(data, actions) {
